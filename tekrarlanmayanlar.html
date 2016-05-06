@@ -1,0 +1,23 @@
+<html>
+<body>
+<script>
+function myFunction() {
+   var text="" ;
+   var kelime = document.getElementById("myText").value;
+   var tekrarlanmayanlar = [];
+   for(i=0; i<kelime.length; i++){
+   	  if(tekrarlanmayanlar.indexOf(kelime[i])==-1){
+      	tekrarlanmayanlar.push(kelime[i]);
+      }else{
+      	console.log(kelime[i]);
+      }
+   }
+   alert(tekrarlanmayanlar);
+document.getElementById("sonuc").value=tekrarlanmayanlar;
+   }
+</script>
+<input type="text" id="myText">
+<button onclick="myFunction()">Check</button>
+<input id="sonuc"/>
+</body>
+</html>

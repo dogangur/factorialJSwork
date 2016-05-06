@@ -1,0 +1,26 @@
+<html>
+<body>
+<script>
+function isPalindrome(){
+	var inputString = document.getElementById("input_text").value.toLowerCase();
+	var revString = [];
+	
+	inputString = inputString.replace(/[^a-zA-Z-]/g, ''); //removes all non-alphabet letters, including white space;
+		
+	for(var indx = inputString.length-1; indx >= 0; indx--){
+		revString.push(inputString[indx]);
+	}
+	
+	revString = revString.join('');
+  window.alert(inputString===revString);
+	
+	document.getElementById("output_text").innerHTML = ""; //set to empty; to 'delete' any value already existing in the node;
+	document.getElementById("output_text").innerHTML += (inputString === revString) ? "is a palindrome" : "not a palindrome";
+	
+}</script>
+<input type="text" id="input_text">
+<button onClick="isPalindrome()">Check</button>
+<br />
+<label id="output_text"></label>
+<body>
+</html>

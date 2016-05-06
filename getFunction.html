@@ -1,0 +1,13 @@
+<html>
+<body>
+<script>
+function someFunc() {
+  var ownName = arguments.callee.toString();
+  ownName = ownName.substr('function '.length);
+  ownName = ownName.substr(0, ownName.indexOf('('));
+  alert(ownName);
+}
+
+someFunc();</script>
+</body>
+</html>

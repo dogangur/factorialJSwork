@@ -1,0 +1,41 @@
+<html>
+<body>
+<script>function isPrime(num) {
+    var prime = num != 1;
+    for(var i=2; i<num; i++) {
+        if(num % i == 0) {
+            prime = false;
+            break;
+        }
+    }
+    return prime;
+}
+
+function init() {
+    var input = document.getElementById("input_num");
+    var result = document.getElementById("result");
+    input.onkeyup = function(e) {
+        var val = this.value;
+        if(val == "") {
+            result.className = "";
+            result.innerHTML = "";
+            return;
+        }
+        if(/\D/.test(val)) {
+            result.className = "now";
+            result.innerHTML = "Only numerical!";
+        } else {
+            result.innerHTML = isPrime(val) ? "Yes,it is!" : "No it is not!";
+            result.className = isPrime(val) ? "yep" : "nope";
+        }
+    };
+}
+
+window.onload = init;</script>
+<p>
+    <label>Is<input type="text" id="input_num" />  Prime?</label>
+</p>
+
+<p id="result"></p>
+</body>
+</html>

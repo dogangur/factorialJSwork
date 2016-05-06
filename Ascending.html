@@ -1,0 +1,34 @@
+<html>
+<body>
+<script>var array = [];
+
+function handle1(event) {
+//alert(arguments.callee.name);
+  if (event.keyCode === 13) {
+
+	isle();
+  }
+
+}
+
+function handle2() {
+ isle();
+
+}
+
+function isle(){
+    array.push(document.getElementById("myText").value);
+    var text = "";
+    array.sort();
+    for (var i = 0; i < array.length; i++) {
+      text += "" + array[i] + "<br>";
+    }
+    document.getElementById("sonuc").innerHTML = text;
+
+}
+</script>
+<p>Ascending</p>
+<input type="text" id="myText" name="txt" onkeypress="handle1(event)" >
+<button onclick="handle2()">Check</button>
+<div id="sonuc">
+</body></html>
